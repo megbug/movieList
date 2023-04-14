@@ -1,14 +1,28 @@
 import { useParams } from 'react-router-dom'
+import { useState } from 'react';
 
 import movies from '../data/movies'
 import MovieItem from './MovieItem';
+import AddMovies from './AddMovies';
 
-const MovieList = () => {
+const MovieList = (props) => {
 
     const movieParams = useParams()
     console.log(movieParams);
 
-    let moviesSort = movies;
+    let [moviesSort, setMoviesSort] = useState(movies)
+
+    // filter funktion für searchbar
+
+    if (props.movieFilter !== '') {
+        moviesSort = moviesSort.filter((elt) => {
+            return (
+                elt.title.includes(props.movieFilter)
+                ||
+                elt.genre.includes(props.movieFilter)
+            )
+        })
+    }
 
     let sortingValue = movieParams.sorting;
 
@@ -49,6 +63,11 @@ const MovieList = () => {
 
     return (
         <div>
+            <AddMovies
+                moviesSort={moviesSort}
+                setMoviesSort={setMoviesSort}
+            />
+            {moviesSort.length} / {movies.length}
             <section className='movieList'>
                 {moviesSort.map((item, i) => {
                     return (

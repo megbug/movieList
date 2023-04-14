@@ -4,7 +4,7 @@
 
 .movieList{
 	display: grid;
-	margin: 30px 15px;
+	margin: 50px 15px;
 	gap: 15px;
 	grid-template-columns: repeat(5, 1fr);
 }
@@ -14,7 +14,7 @@
 	padding: 3px;
 	min-height: 350px;
 	border-radius: 8px;
-	background-color:midnightblue;
+	background-color:steelblue;
 }
 
 .navBar {
@@ -28,4 +28,29 @@
 	padding: 10px 30px;
 	border-radius: 8px;
 	margin: 0 10px;
+}
+
+.form {
+	margin: 6vh 0;
+}
+
+.form input {
+	margin: 0 5px;
+}
+
+.form button {
+	background-color:steelblue;
+	color: #fff;
+	padding: 3px 30px;
+	border-radius: 8px;
+	border-style: none;
+}
+
+.searchBar {
+	width: 240px;
+	margin: 0 10px;
+	padding: 10px 0px;
+	border-radius: 8px;
+	border-style: none;
+	text-align: center;
 }

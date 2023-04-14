@@ -1,4 +1,4 @@
-
+// import { Link } from 'react-router-dom'
 const MovieItem = (props) => {
 
     return (
@@ -11,6 +11,7 @@ const MovieItem = (props) => {
             <p>{props.genre.map((elt) =>
                 <p>{elt}</p>)}
             </p>
+            {/* <Link to={`/filmdetail/${props.key}`}>Read More</Link> */}
         </div>
     );
 }
